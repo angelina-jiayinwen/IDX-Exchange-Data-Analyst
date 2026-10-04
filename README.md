@@ -23,6 +23,26 @@ Tasks completed:
 File:
 - `week1_aggregation.py`
 
+#### Row Count Validation
+
+##### Sold Dataset
+
+| Processing stage | Row count |
+|---|---:|
+| Before concatenation | 736,355 |
+| After concatenation | 736,355 |
+| Before Residential filter | 736,355 |
+| After Residential filter | 495,207 |
+
+##### Listing Dataset
+
+| Processing stage | Row count |
+|---|---:|
+| Before concatenation | 1,022,950 |
+| After concatenation | 1,022,950 |
+| Before Residential filter | 1,022,950 |
+| After Residential filter | 650,461 |
+
 ### Weeks 2–3 – Dataset Structuring and Validation
 
 Coming soon.
