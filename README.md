@@ -75,8 +75,10 @@ Generated outputs (stored locally, excluded from GitHub):
 - JupyterLab
 - Git
 - GitHub
+- Matplotlib
 
 ## Repository Files
 
 - `week1_aggregation.py` – Monthly dataset aggregation and Residential property filtering.
 - `.gitignore` – Prevents confidential datasets and local environment files from being uploaded.
+- `week2_3_dataset_validation.py` – Residential dataset validation, missing-value analysis, numeric distribution review, and exploratory data analysis.
