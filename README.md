@@ -45,7 +45,28 @@ File:
 
 ### Weeks 2–3 – Dataset Structuring and Validation
 
-Coming soon.
+Conducted exploratory data analysis (EDA) on the Residential-filtered CRMLS Sold and Listings datasets produced in Week 1, focusing on dataset structure, completeness, numeric distributions, and potential data-quality issues before cleaning.
+
+Tasks completed:
+- Inspected dataset dimensions, column names, and data types for both datasets.
+- Verified that both datasets contain only PropertyType == "Residential" records.
+- Calculated missing-value counts and percentages for all columns, flagging those with more than 90% missing values.
+- Identified core analytical fields to retain and nonessential, high-missing columns for further review.
+- Generated descriptive statistics, including minimum, maximum, mean, median, and percentile summaries for nine key numeric fields where available.
+- Created histograms and boxplots to examine numeric distributions and identify potential extreme outliers.
+- Conducted preliminary EDA on sale prices, days on market, sale-to-list price comparisons, date consistency, and county-level median prices.
+- Generated local CSV reports, visualizations, and EDA findings to inform subsequent data cleaning.
+
+File:
+- 'week2_3_dataset_validation.py' – Dataset validation, missing-value analysis, numeric EDA, outlier screening, and preliminary market analysis for both Sold and Listings datasets
+
+Generated outputs (stored locally, excluded from GitHub):
+- Column structure and property-type summary reports
+- Missing-value reports and columns exceeding 90% missingness
+- Numeric distribution and percentile summaries
+- Histograms and boxplots
+- Potential outlier reports
+- EDA findings and county-level price summaries
 
 ## Tools Used
 
