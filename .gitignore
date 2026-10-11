@@ -27,3 +27,11 @@ venv/
 # OS/editor clutter
 .DS_Store
 .vscode/
+
+# Weeks 2-3 generated EDA outputs
+outputs/
+
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
