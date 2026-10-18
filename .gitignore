@@ -28,8 +28,16 @@ venv/
 .DS_Store
 .vscode/
 
-# Weeks 2-3 generated EDA outputs
-outputs/
+# Weeks 2-3 EDA outputs
+# Ignore all outputs by default
+outputs/*
+
+# Allow approved analysis reports and plots
+!outputs/public/
+!outputs/public/**/
+
+# Allow approved summary CSV files
+!outputs/public/**/*.csv
 
 # Local secrets and credentials
 .env
