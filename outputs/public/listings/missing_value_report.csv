@@ -1,0 +1,85 @@
+column,null_count,null_percent,over_90_percent,decision
+FireplacesTotal,650461,100.0,True,Review for dropping (not deleted)
+BusinessType,650461,100.0,True,Review for dropping (not deleted)
+TaxYear,650461,100.0,True,Review for dropping (not deleted)
+MiddleOrJuniorSchoolDistrict,650461,100.0,True,Review for dropping (not deleted)
+ElementarySchoolDistrict,650461,100.0,True,Review for dropping (not deleted)
+TaxAnnualAmount,650461,100.0,True,Review for dropping (not deleted)
+AboveGradeFinishedArea,650461,100.0,True,Review for dropping (not deleted)
+CoveredSpaces,650461,100.0,True,Review for dropping (not deleted)
+BelowGradeFinishedArea,646620,99.40949572687678,True,Review for dropping (not deleted)
+CoBuyerAgentFirstName,632418,97.22612116637276,True,Review for dropping (not deleted)
+BuilderName,620671,95.42017123240286,True,Review for dropping (not deleted)
+LotSizeDimensions,616483,94.776320179073,True,Review for dropping (not deleted)
+BuildingAreaTotal,593137,91.18717340470836,True,Review for dropping (not deleted)
+ElementarySchool,572515,88.01680654182188,False,Retain pending review
+MiddleOrJuniorSchool,572490,88.01296311385309,False,Retain pending review
+BuyerAgencyCompensation,571468,87.8558437784894,False,Retain pending review
+BuyerAgencyCompensationType,571448,87.85276903611438,False,Retain pending review
+HighSchool,548150,84.2710016434498,False,Retain pending review
+CoListAgentFirstName,505071,77.64816030476847,False,Retain pending review
+CoListAgentLastName,504591,77.5743664877679,False,Retain pending review
+CoListOfficeName,504481,77.55745540470528,False,Retain pending review
+BuyerOfficeAOR,470679,72.36083331667848,False,Retain pending review
+ClosePrice,469749,72.2178577962399,False,Retain: core/future-use field
+BuyerOfficeName,456676,70.20805244280595,False,Retain: core/future-use field
+BuyerOfficeName.1,456676,70.20805244280595,False,Retain pending review
+BuyerAgentFirstName,454845,69.92655977837256,False,Retain pending review
+BuyerAgentMlsId,454153,69.82017369219676,False,Retain pending review
+BuyerAgentLastName,454009,69.79803554709659,False,Retain pending review
+CloseDate,446495,68.64285483680035,False,Retain: core/future-use field
+CloseDate.1,446495,68.64285483680035,False,Retain pending review
+SubdivisionName,410825,63.15905181094639,False,Retain pending review
+AssociationFeeFrequency,373040,57.350094778933716,False,Retain pending review
+PurchaseContractDate,332009,51.04210705945476,False,Retain: core/future-use field
+MainLevelBedrooms,294849,45.32923572666155,False,Retain pending review
+HighSchoolDistrict,194503,29.90233080845739,False,Retain pending review
+AssociationFee,156249,24.021271067750412,False,Retain pending review
+AttachedGarageYN,113473,17.445012076050677,False,Retain pending review
+Stories,112673,17.32202238104975,False,Retain pending review
+ListAgentEmail,104805,16.1124187307156,False,Retain pending review
+MLSAreaMajor,88868,13.66231026917832,False,Retain: core/future-use field
+Latitude.1,81314,12.50098007413204,False,Retain pending review
+Longitude.1,81314,12.50098007413204,False,Retain pending review
+Longitude,81314,12.50098007413204,False,Retain: core/future-use field
+Latitude,81314,12.50098007413204,False,Retain: core/future-use field
+Levels,69247,10.64583426216176,False,Retain pending review
+LotSizeAcres,52382,8.053057754423401,False,Retain: core/future-use field
+LotSizeSquareFeet,51649,7.9403684463788,False,Retain pending review
+LotSizeArea,51436,7.9076224400848005,False,Retain pending review
+NewConstructionYN,45127,6.937694957883717,False,Retain pending review
+GarageSpaces,35638,5.478883438053934,False,Retain pending review
+ContractStatusChangeDate,7008,1.0773897282081477,False,Retain: core/future-use field
+ListAgentFirstName.1,5032,0.7736051815558505,False,Retain pending review
+ListAgentFirstName,5032,0.7736051815558505,False,Retain pending review
+PropertySubType,1467,0.2255323532079556,False,Retain: core/future-use field
+StreetNumberNumeric,1240,0.19063402725144168,False,Retain pending review
+YearBuilt,1107,0.17018699045753702,False,Retain: core/future-use field
+UnparsedAddress.1,1022,0.15711933536368822,False,Retain pending review
+UnparsedAddress,1021,0.15696559824493705,False,Retain pending review
+OriginalListPrice,934,0.1435904689135859,False,Retain: core/future-use field
+FireplaceYN,674,0.10361881803828363,False,Retain pending review
+LivingArea.1,639,0.09823801888199292,False,Retain pending review
+LivingArea,639,0.09823801888199292,False,Retain: core/future-use field
+City,614,0.09439459091321385,False,Retain: core/future-use field
+BedroomsTotal,163,0.02505915035643951,False,Retain: core/future-use field
+ListAgentFullName,126,0.019370876962646492,False,Retain: core/future-use field
+StateOrProvince,77,0.011837758143839522,False,Retain pending review
+BathroomsTotalInteger,56,0.008609278650065107,False,Retain: core/future-use field
+ListAgentLastName.1,49,0.0075331188188069685,False,Retain pending review
+ListAgentLastName,49,0.0075331188188069685,False,Retain pending review
+ParkingTotal,20,0.003074742375023253,False,Retain pending review
+PostalCode,20,0.003074742375023253,False,Retain: core/future-use field
+PropertyType,0,0.0,False,Retain: core/future-use field
+ListOfficeName,0,0.0,False,Retain: core/future-use field
+ListPrice,0,0.0,False,Retain: core/future-use field
+DaysOnMarket,0,0.0,False,Retain: core/future-use field
+ListingContractDate,0,0.0,False,Retain: core/future-use field
+MlsStatus,0,0.0,False,Retain pending review
+ListingKeyNumeric,0,0.0,False,Retain pending review
+CountyOrParish,0,0.0,False,Retain: core/future-use field
+PropertyType.1,0,0.0,False,Retain pending review
+ListingKey,0,0.0,False,Retain: core/future-use field
+ListingId,0,0.0,False,Retain: core/future-use field
+ListPrice.1,0,0.0,False,Retain pending review
+DaysOnMarket.1,0,0.0,False,Retain pending review

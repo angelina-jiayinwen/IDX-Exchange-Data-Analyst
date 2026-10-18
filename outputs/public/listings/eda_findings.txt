@@ -1,0 +1,14 @@
+Dataset: listings
+Total Residential rows: 650,461
+PropertyType: Residential (filtered in Week 1)
+Mean list price: 1,310,693.98
+Median list price: 840,000.00
+DaysOnMarket summary:
+count    650461.000000
+mean         20.308326
+std          27.495359
+min         -58.000000
+25%           5.000000
+50%          11.000000
+75%          23.000000
+max         731.000000

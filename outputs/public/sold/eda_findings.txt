@@ -1,0 +1,32 @@
+Dataset: sold
+Total Residential rows: 495,207
+PropertyType: Residential (filtered in Week 1)
+Mean close price (non-null): 1,189,650.90
+Median close price (non-null): 825,000.00
+DaysOnMarket summary:
+count    495207.000000
+mean         37.641877
+std          53.598994
+min        -288.000000
+25%           8.000000
+50%          19.000000
+75%          49.000000
+max       12430.000000
+Valid sold/list price pairs: 495,204
+Sold above list: 39.62%
+Sold below list: 42.93%
+Sold at list: 17.44%
+Close before listing: 75 / 495,206 comparable dates
+Top 10 counties by median close price (sample sizes included):
+                  median  count
+county                         
+San Mateo      1700000.0   8451
+Santa Clara    1590000.0  21068
+Del Norte      1465000.0      2
+San Francisco  1200000.0   1128
+Santa Cruz     1188000.0   3556
+Orange         1185000.0  55781
+Marin          1170000.0    173
+Alameda        1130000.0  23429
+Other County   1100000.0      5
+Alpine         1100000.0      1
