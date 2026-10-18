@@ -60,13 +60,24 @@ Tasks completed:
 File:
 - 'week2_3_dataset_validation.py' – Dataset validation, missing-value analysis, numeric EDA, outlier screening, and preliminary market analysis for both Sold and Listings datasets
 
-Generated outputs (stored locally, excluded from GitHub):
+### Generated EDA Outputs
+
+The following analysis reports and visualizations were generated for both Residential Sold and Listings datasets and are available in this repository with supervisor approval.
+
+**Reports and summaries:**
 - Column structure and property-type summary reports
 - Missing-value reports and columns exceeding 90% missingness
 - Numeric distribution and percentile summaries
-- Histograms and boxplots
-- Potential outlier reports
-- EDA findings and county-level price summaries
+- Potential outlier screening reports
+- EDA findings and county-level median price summaries (where applicable)
+
+**Visualizations:**
+- Histograms for key numeric variables
+- Boxplots for identifying potential extreme outliers
+
+**GitHub output directories:**
+- `outputs/public/sold/` – Sold dataset EDA reports and plots
+- `outputs/public/listings/` – Listings dataset EDA reports and plots
 
 ## Tools Used
 
