@@ -93,3 +93,5 @@ The following analysis reports and visualizations were generated for both Reside
 - `week1_aggregation.py` – Monthly dataset aggregation and Residential property filtering.
 - `.gitignore` – Prevents confidential datasets and local environment files from being uploaded.
 - `week2_3_dataset_validation.py` – Residential dataset validation, missing-value analysis, numeric distribution review, and exploratory data analysis.
+- `outputs/public/sold/` – Approved Sold dataset EDA reports and visualizations.
+- `outputs/public/listings/` – Approved Listings dataset EDA reports and visualizations.
