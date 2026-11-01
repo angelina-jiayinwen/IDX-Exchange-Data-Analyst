@@ -79,6 +79,36 @@ The following analysis reports and visualizations were generated for both Reside
 - `outputs/public/sold/` – Sold dataset EDA reports and plots
 - `outputs/public/listings/` – Listings dataset EDA reports and plots
 
+- ## Weeks 2–3 (Continued): Mortgage Rate Enrichment
+
+### Objective
+Enrich the combined Residential sold and listings datasets with the national 30-year fixed mortgage rate from the Federal Reserve Economic Data (FRED) database. This provides additional economic context for analyzing California residential real estate market trends.
+
+### Data Source
+- **Source:** Federal Reserve Economic Data (FRED)
+- **Series:** MORTGAGE30US — 30-Year Fixed Rate Mortgage Average in the United States
+- **Original Frequency:** Weekly
+- **Target Frequency:** Monthly
+- **Source URL:** https://fred.stlouisfed.org/series/MORTGAGE30US
+
+### Data Processing
+The `mortgage_rate_enrichment.py` script performs the following operations:
+
+1. Retrieves historical mortgage rates directly from FRED using Pandas.
+2. Converts observation dates to datetime format and groups weekly observations by year and month.
+3. Calculates the monthly average mortgage rate.
+4. Creates a matching `year_month` key for both MLS datasets:
+   - **Sold:** Based on `CloseDate`
+   - **Listings:** Based on `ListingContractDate`
+5. Performs left joins to add the monthly mortgage rate (`rate_30yr_fixed`) to each dataset.
+6. Validates the merged datasets by checking missing mortgage rates and ensuring that row counts are preserved.
+7. Exports the enriched datasets as new CSV files without overwriting the original data.
+
+### Deliverables
+- `mortgage_rate_enrichment.py` — Reproducible Python script for fetching, processing, merging, and validating mortgage rate data.
+- Two enriched CSV datasets containing the original MLS records and the additional `rate_30yr_fixed` column.
+- Validation output reporting unmatched mortgage rates and confirming row-count consistency.
+
 ## Tools Used
 
 - Python
