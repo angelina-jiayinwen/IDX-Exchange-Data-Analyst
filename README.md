@@ -109,6 +109,53 @@ The `mortgage_rate_enrichment.py` script performs the following operations:
 - Two enriched CSV datasets containing the original MLS records and the additional `rate_30yr_fixed` column.
 - Validation output reporting unmatched mortgage rates and confirming row-count consistency.
 
+- ## Weeks 4–5: Data Cleaning and Preparation
+
+### Objective
+Prepare the mortgage-enriched Residential Sold and Listings datasets for downstream analysis and feature engineering by standardizing data types, identifying inconsistencies, and evaluating data quality.
+
+### Data Cleaning and Validation
+
+The `week4_5_data_cleaning.py` script performs the following operations:
+
+1. **Dataset Inspection**
+   - Loads the mortgage-enriched Residential Sold and Listings datasets.
+   - Reports original row counts, column counts, data types, and missing-value summaries.
+
+2. **Date Standardization**
+   - Converts `CloseDate`, `PurchaseContractDate`, `ListingContractDate`, and `ContractStatusChangeDate` to datetime where available.
+   - Converts invalid date strings to `NaT` and reports conversion failures.
+
+3. **Redundant Column Review**
+   - Identifies potentially redundant or unnecessary columns.
+   - Documents proposed removals while preserving all columns unless explicitly approved.
+
+4. **Missing Values and Numeric Validation**
+   - Reports missing values before and after cleaning.
+   - Converts relevant numeric columns using Pandas.
+   - Flags invalid closing prices, nonpositive living areas, negative days on market, and negative bedroom or bathroom counts.
+   - Preserves missing and suspicious values for further investigation rather than automatically deleting records.
+
+5. **Date Consistency Checks**
+   - Creates `listing_after_close_flag`, `purchase_after_close_flag`, and `negative_timeline_flag`.
+   - Reports the number of records violating each date consistency rule.
+
+6. **Geographic Data Quality**
+   - Flags missing or zero coordinates, positive longitude values, globally implausible coordinates, and coordinates outside an approximate California bounding box.
+   - Preserves original latitude and longitude values.
+
+### Outputs
+- `week4_5_data_cleaning.py` — Reproducible data cleaning and validation script.
+- `CRMLSSoldCombined_202401_202609_cleaned.csv` — Cleaned Residential Sold dataset.
+- `CRMLSListingCombined_202401_202609_cleaned.csv` — Cleaned Residential Listings dataset.
+- `week4_5_validation_summary.csv` — Consolidated validation results for both datasets.
+- Additional CSV reports covering missing values, date conversions, numeric conversions, and proposed column removals.
+
+### Data Preservation
+Original combined and mortgage-enriched datasets are not overwritten. The cleaning process preserves all rows, adds data quality flags, and retains columns needed for subsequent feature engineering.
+
+**Note:** Large MLS datasets and private validation reports are stored locally and excluded from the GitHub repository according to `.gitignore`.
+
 ## Tools Used
 
 - Python
