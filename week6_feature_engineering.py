@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 from shapely import make_valid
 
-DEFAULT_PROJECT = Path(__file__).resolve().parents[1]
+DEFAULT_PROJECT = Path(__file__).resolve().parent
 DATES = ['CloseDate', 'ListingContractDate', 'PurchaseContractDate']
 NUMBERS = ['ClosePrice', 'OriginalListPrice', 'LivingArea', 'DaysOnMarket',
            'Latitude', 'Longitude']

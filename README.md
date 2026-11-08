@@ -162,7 +162,7 @@ Analyzed the January 2024–September 2026 cleaned Residential Sold dataset from
 
 ### Script and inputs
 
-- `scripts/week6_feature_engineering.py` — validated Week 6 pipeline. The older root-level script is preserved locally; use the script under `scripts/`.
+- `week6_feature_engineering.py` — validated Week 6 pipeline, alongside the other weekly scripts.
 - `CRMLS data/CRMLSSoldCombined_202401_202609_cleaned.csv` — cleaned sold input.
 - `CRMLS data/CRMLSListingCombined_202401_202609_cleaned.csv` — inspected separately for metric applicability; no listings feature output is generated.
 - `school_districts/DistrictAreas2425.shp` and its companion files — locally extracted [California School District Areas 2024–25](https://data.ca.gov/dataset/california-school-district-areas-2024-25/resource/7dfaf005-58eb-45db-93b1-7aff091b2172).
@@ -202,13 +202,13 @@ Dependencies: Python, pandas, NumPy, GeoPandas, and Shapely. The validated Anaco
 From the repository root:
 
 ```bash
-/opt/anaconda3/bin/python scripts/week6_feature_engineering.py
+/opt/anaconda3/bin/python week6_feature_engineering.py
 ```
 
 The project root is inferred from the script location. To use inputs in a different project folder:
 
 ```bash
-/opt/anaconda3/bin/python scripts/week6_feature_engineering.py --project-dir "/path/to/project"
+/opt/anaconda3/bin/python week6_feature_engineering.py --project-dir "/path/to/project"
 ```
 
 ### Local outputs and Tableau
