@@ -156,6 +156,75 @@ Original combined and mortgage-enriched datasets are not overwritten. The cleani
 
 **Note:** Large MLS datasets and private validation reports are stored locally and excluded from the GitHub repository according to `.gitignore`.
 
+## Week 6: Feature Engineering and Market Metrics
+
+Analyzed the January 2024–September 2026 cleaned Residential Sold dataset from Weeks 4–5, preserving all 495,207 records and the existing monthly mortgage-rate enrichment.
+
+### Script and inputs
+
+- `scripts/week6_feature_engineering.py` — validated Week 6 pipeline. The older root-level script is preserved locally; use the script under `scripts/`.
+- `CRMLS data/CRMLSSoldCombined_202401_202609_cleaned.csv` — cleaned sold input.
+- `CRMLS data/CRMLSListingCombined_202401_202609_cleaned.csv` — inspected separately for metric applicability; no listings feature output is generated.
+- `school_districts/DistrictAreas2425.shp` and its companion files — locally extracted [California School District Areas 2024–25](https://data.ca.gov/dataset/california-school-district-areas-2024-25/resource/7dfaf005-58eb-45db-93b1-7aff091b2172).
+
+MLS datasets, boundary files, and private outputs are not included in this commit. The script stops with a clear error if required local inputs are missing.
+
+### Features and district enrichment
+
+- Calculates `PriceRatio` and `CloseToOriginalListRatio` as `ClosePrice / OriginalListPrice`, and `PricePerSqFt` as `ClosePrice / LivingArea`, using positive price/denominator values.
+- Validates existing `DaysOnMarket`, derives `Year`, `Month`, and `YrMo` from `CloseDate`, and calculates listing-to-contract and contract-to-close days.
+- Treats `ListingContractDate` as the listing agreement effective date; its interval may differ from MLS DaysOnMarket.
+- Uses GeoPandas to intersect valid property coordinates with elementary, high school, and unified district boundaries. Coordinate systems are aligned, invalid polygon geometries are repaired in memory, and no nearest-district matching is used.
+- Preserves original MLS school fields, retains unmatched records, and flags same-type ambiguous matches while keeping all candidate district names/IDs.
+- Creates four summaries: property type/subtype, county/MLS area, listing office, and buyer office. Includes transaction counts, per-metric valid counts, and flags for groups smaller than 10 records.
+
+### Validation and interpretation
+
+The validated local run preserved 495,207 input/output rows. Price formulas, duplicate ratio equality, day intervals, date parts, source attributes, mortgage fields, and all four segment transaction totals passed checks. An independent CSV read-back also passed.
+
+| School district matching | Records |
+|---|---:|
+| Valid coordinates | 490,363 |
+| Matched to at least one district | 490,155 |
+| Unmatched | 5,052 |
+| Same-type ambiguous matches | 0 |
+
+The match rate was 98.98% of all records and 99.96% of records with valid coordinates. Seven invalid district geometries were repaired in memory without changing the source files.
+
+Missing numeric values remain missing. Negative DOM/date intervals remain flagged in detail and are excluded from summary statistics. Very long positive intervals and pre-2000 contract dates are flagged for review. The data contains 379 repeated ListingKeys beyond their first occurrence; records are retained, so transaction counts are source-record counts rather than deduplicated sales.
+
+Some very small positive original list prices produce extreme ratios: the median PriceRatio was 0.9945 while its mean was 50.63. Review these source values before interpreting mean ratios. The 2024–25 boundaries are applied across the entire period and do not establish historical school attendance eligibility.
+
+### Run locally
+
+Dependencies: Python, pandas, NumPy, GeoPandas, and Shapely. The validated Anaconda base run used Python 3.13.9, pandas 2.2.3, NumPy 2.1.3, and GeoPandas 1.2.0.
+
+From the repository root:
+
+```bash
+/opt/anaconda3/bin/python scripts/week6_feature_engineering.py
+```
+
+The project root is inferred from the script location. To use inputs in a different project folder:
+
+```bash
+/opt/anaconda3/bin/python scripts/week6_feature_engineering.py --project-dir "/path/to/project"
+```
+
+### Local outputs and Tableau
+
+Outputs are written to `outputs/private/week6/`; reruns create timestamped subfolders instead of overwriting existing outputs:
+
+- `week6_sold_enriched.csv`
+- `week6_feature_sample.csv` — 20 example records.
+- `week6_summary_property_type.csv`
+- `week6_summary_geography.csv`
+- `week6_summary_list_office.csv`
+- `week6_summary_buyer_office.csv`
+- `week6_metric_quality.csv`, `week6_validation.json`, and `week6_validation_report.txt`.
+
+Use the detailed enriched CSV for Tableau monthly filters and trends. The four summaries cover the entire period. Format ratios as percentages, display transaction/valid-value counts, and review invalid flags and source outliers before presenting averages. Recompute statistics from detail rather than averaging summary medians or unweighted group means.
+
 ## Tools Used
 
 - Python
