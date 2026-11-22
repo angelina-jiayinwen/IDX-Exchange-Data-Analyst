@@ -225,6 +225,33 @@ Outputs are written to `outputs/private/week6/`; reruns create timestamped subfo
 
 Use the detailed enriched CSV for Tableau monthly filters and trends. The four summaries cover the entire period. Format ratios as percentages, display transaction/valid-value counts, and review invalid flags and source outliers before presenting averages. Recompute statistics from detail rather than averaging summary medians or unweighted group means.
 
+## Week 7 — Outlier Detection and Data Quality
+
+[week7_outlier_detection.py](week7_outlier_detection.py) analyzes the cleaned CRMLS Residential Sold and Listings files for January 2024 through September 2026.
+
+- Calculates separate 1.5 × IQR fences for each applicable metric in each dataset using valid original observations. Metrics include sale price, list price for listings, price per square foot, close-to-list ratio, days on market, and living area.
+- Preserves every input record in the flagged CSVs and tracks statistical outliers, business-rule violations, and missing inputs separately. The filtered CSVs exclude records with either removal flag. Missing values alone allow retention.
+- Uses sale price per square foot for Sold and list price per square foot for Listings, treating `LivingArea` as interior square feet. The ratio is `ClosePrice / ListPrice`. In the Listings file, sale price and ratio apply only to Closed records.
+
+| Dataset | Input and flagged | Filtered | Removed |
+|---|---:|---:|---:|
+| Sold | 495,207 | 370,759 | 124,448 (25.13%) |
+| Listings | 650,461 | 504,193 | 146,268 (22.49%) |
+
+CSV read-back validation reconciled the exported rows and flags against the inputs and the original thresholds. Source SHA-256 checksums matched before and after the run.
+
+A $1 list price produced the highest ratio in both files, and some matching MLS records had conflicting closing prices. The report shows the 20 highest ratios per dataset for review. Source verification is needed before correcting prices. A statistical flag can also capture a legitimate market extreme.
+
+### Run locally
+
+The validated Anaconda base run used Python 3.13.9, pandas 2.2.3, NumPy 2.1.3, and Matplotlib 3.10.0. Place `CRMLSSoldCombined_202401_202609_cleaned.csv` and `CRMLSListingCombined_202401_202609_cleaned.csv` in `CRMLS data/`, then run from the repository root:
+
+```bash
+/opt/anaconda3/bin/python week7_outlier_detection.py
+```
+
+The four flagged and filtered CSVs, `week7_outlier_report.txt`, and three before-and-after plots are stored under `outputs/private/week7/`. Reruns use timestamped subfolders. The MLS inputs and row-level outputs stay local.
+
 ## Tools Used
 
 - Python
